@@ -9,19 +9,19 @@ for product in $products; do
     
     # Test each API endpoint
     echo "Testing /product/$product"
-    curl http://localhost:5000/product/$product
+    curl http://127.0.0.1:80/product/$product
 
     echo "Testing /link/$product"
-    curl http://localhost:5000/link/$product
+    curl http://127.0.0.1:80/link/$product
 
     echo "Testing /markup/$product"
-    curl http://localhost:5000/markup/$product
+    curl http://127.0.0.1:80/markup/$product
 
     echo "Testing /archive/$product"
-    curl http://localhost:5000/archive/$product
+    curl http://127.0.0.1:80/archive/$product
 
     echo "Testing /real/$product"
-    curl http://localhost:5000/real/$product
+    curl http://127.0.0.1:80/real/$product
 
     echo ""
 done
