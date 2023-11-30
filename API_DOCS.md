@@ -69,3 +69,31 @@ Returns the real product name for a given Larkin product. If the comment for the
 **Response:**
 
 A JSON object containing the real product name. If the comment for the product contains "Not_sold", the comment will also be included.
+
+---
+
+### `GET /larp_price/{name}`
+
+Returns the Larkin's price for a given Larkin product.
+
+**Parameters:**
+
+- `name`: The name of the Larkin product.
+
+**Response:**
+
+A JSON object containing the Larkin's price.
+
+---
+
+### `GET /price/{name}`
+
+Returns the real price for a given Larkin product.
+
+**Parameters:**
+
+- `name`: The name of the Larkin product.
+
+**Response:**
+
+A JSON object containing the real price.

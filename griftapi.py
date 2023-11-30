@@ -104,5 +104,25 @@ def get_real(name):
             return jsonify({'RealProduct': product['RealProduct'].iloc[0], 'comment': product['Comments'].iloc[0]}), 200
         return jsonify({'RealProduct': product['RealProduct'].iloc[0]}), 200
 
+@app.route('/larp_price/<name>', methods=['GET'])
+def get_larp_price(name):
+    # Filter the DataFrame based on the product name
+    name = name.lower().strip()
+    product = df[df['LarkinProduct'].str.lower().str.strip() == name]
+    if product.empty:
+        return jsonify({'error': 'Product not found'}), 404
+    else:
+        return jsonify({'LarkinPrice': product['LarkinPrice'].iloc[0]}), 200
+
+@app.route('/price/<name>', methods=['GET'])
+def get_real_price(name):
+    # Filter the DataFrame based on the product name
+    name = name.lower().strip()
+    product = df[df['LarkinProduct'].str.lower().str.strip() == name]
+    if product.empty:
+        return jsonify({'error': 'Product not found'}), 404
+    else:
+        return jsonify({'RealPrice': product['RealPrice'].iloc[0]}), 200
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

@@ -32,6 +32,10 @@ The Larkin API provides the following endpoints:
 `curl https://grift.vuln.dad/archive/ObeliskOne`
 - `/real/<name>`: Returns the real product name for the product with the given name. If the product's comment field contains "Not_sold", the comment is also returned.
 `curl https://grift.vuln.dad/real/ObeliskOne`
+- `/larp_price/<name>`: Returns the Larkin's price for the product with the given name. 
+`curl https://grift.vuln.dad/larp_price/ObeliskOne`
+- `/price/<name>`: Returns the real price for the product with the given name.
+`curl https://grift.vuln.dad/price/ObeliskOne`
 
 Replace `<name>` with the name of the product you want to query.
 
