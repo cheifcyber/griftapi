@@ -1,17 +1,38 @@
 # GriftAPI
 
-The GriftAPI is a Flask-based web service that provides access to the information of who makes the products Larkin is reselling for a high markup
+GriftAPI is a Flask application that provides an API for accessing product data.
 
-## Getting Started
+## New Features
 
-To get the API running on your local machine, follow these steps:
+- Product API: Get detailed information about a product.
+- Link API: Get the link to a product.
+- Markup API: Get the markup for a product.
+- Archive API: Get the archive status of a product.
+- Real API: Get the real name of a product.
 
-1. Clone the repository: `git clone https://github.com/cheifcyber/griftapi.git`
-2. Navigate to the project directory: `cd griftapi`
-3. Install the required Python packages: `pip install -r requirements.txt`
-4. Run the Flask application: `python griftapi.py`
+## cURL Examples
 
-The API will be available at `http://localhost:5000`.
+Here are some examples of how to use the API with cURL:
+
+\`\`\`bash
+curl https://grift.vuln.dad/product/ObeliskOne
+curl https://grift.vuln.dad/link/ObeliskOne
+curl https://grift.vuln.dad/markup/ObeliskOne
+curl https://grift.vuln.dad/archive/ObeliskOne
+curl https://grift.vuln.dad/real/ObeliskOne
+\`\`\`
+
+## Starting the Container
+
+To start the Docker container, run the following command:
+
+\`\`\`bash
+docker run -p 5000:5000 -d griftapi
+\`\`\`
+
+This command maps port 5000 of the host to port 5000 of the container and runs the container in detached mode.
+
+Visit `https://grift.vuln.dad` in your web browser to access the application.
 
 ## API Endpoints
 
