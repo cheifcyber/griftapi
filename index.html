@@ -3,7 +3,6 @@
 <head>
     <title>GriftAPI</title>
     <link rel="stylesheet" type="text/css" href="/styles.css">
-    <script src="/script.js"></script>
 </head>
 <body>
     <div class="api-test">
@@ -16,6 +15,7 @@
             <option value="/real/">Real</option>
             <option value="/larp_price/">Larkin's Price</option>
             <option value="/price/">Real Price</option>
+            <option value="/location/">Location</option>
         </select>
         <select id="productName">
             <!-- Product options will be populated here -->
@@ -51,6 +51,29 @@
                     productNameSelect.add(option);
                 });
             });
+    </script>
+    <script>
+        document.getElementById('apiCall').addEventListener('change', function() {
+            if (this.value === '/location/') {
+                document.getElementById('productName').disabled = true;
+            } else {
+                document.getElementById('productName').disabled = false;
+            }
+        });
+    </script>
+    <script>
+        function sendRequest() {
+            var apiCall = document.getElementById('apiCall').value;
+            var productName = document.getElementById('productName').value;
+            fetch('https://grift.vuln.dad' + apiCall + productName)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('response').textContent = 'Error: ' + error;
+                });
+        }
     </script>
 </body>
 </html>

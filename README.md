@@ -36,6 +36,8 @@ The Larkin API provides the following endpoints:
 `curl https://grift.vuln.dad/larp_price/ObeliskOne`
 - `/price/<name>`: Returns the real price for the product with the given name.
 `curl https://grift.vuln.dad/price/ObeliskOne`
+- `/location`: Returns the current location of Larkin.
+`curl https://grift.vuln.dad/location`
 
 Replace `<name>` with the name of the product you want to query.
 

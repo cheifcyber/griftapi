@@ -124,5 +124,9 @@ def get_real_price(name):
     else:
         return jsonify({'RealPrice': product['RealPrice'].iloc[0]}), 200
 
+@app.route('/location', methods=['GET'])
+def get_location():
+    return jsonify({'location': 'Larkin is in Canggu Bali'}), 200
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

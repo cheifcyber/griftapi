@@ -97,3 +97,13 @@ Returns the real price for a given Larkin product.
 **Response:**
 
 A JSON object containing the real price.
+
+---
+
+### `GET /location`
+
+Returns the current location of Larkin.
+
+**Response:**
+
+A JSON object containing the location.
