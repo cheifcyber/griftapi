@@ -14,21 +14,19 @@ GriftAPI is a Flask application that provides an API for accessing product data.
 
 Here are some examples of how to use the API with cURL:
 
-\`\`\`bash
-curl https://grift.vuln.dad/product/ObeliskOne
-curl https://grift.vuln.dad/link/ObeliskOne
-curl https://grift.vuln.dad/markup/ObeliskOne
-curl https://grift.vuln.dad/archive/ObeliskOne
-curl https://grift.vuln.dad/real/ObeliskOne
-\`\`\`
+`curl https://grift.vuln.dad/product/ObeliskOne`
+`curl https://grift.vuln.dad/link/ObeliskOne`
+`curl https://grift.vuln.dad/markup/ObeliskOne`
+`curl https://grift.vuln.dad/archive/ObeliskOne`
+`curl https://grift.vuln.dad/real/ObeliskOne`
 
 ## Starting the Container
 
 To start the Docker container, run the following command:
 
-\`\`\`bash
-docker run -p 5000:5000 -d griftapi
-\`\`\`
+
+`docker run -p 5000:5000 -d griftapi`
+
 
 This command maps port 5000 of the host to port 5000 of the container and runs the container in detached mode.
 
