@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 app = Flask(__name__, static_folder=os.path.abspath('.'))
-CORS(app, origins=["http://127.0.0.1:8000"])
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Load the CSV data into a pandas DataFrame
 df = pd.read_csv('larkin.csv')
@@ -12,6 +12,10 @@ df = pd.read_csv('larkin.csv')
 @app.route('/<path:path>')
 def send_file(path):
     return send_from_directory('.', path)
+
+@app.route('/')
+def home():
+    return send_from_directory('.', 'index.html')
 
 @app.route('/products', methods=['GET'])
 def get_products():
@@ -97,4 +101,4 @@ def get_real(name):
         return jsonify({'RealProduct': product['RealProduct'].iloc[0]}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)

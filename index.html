@@ -27,16 +27,16 @@
     <div class="curl-examples">
         <h2>cURL Examples</h2>
         <ul>
-            <li><code>curl http://127.0.0.1:5000/product/ObeliskOne</code></li>
-            <li><code>curl http://127.0.0.1:5000/link/ObeliskOne</code></li>
-            <li><code>curl http://127.0.0.1:5000/markup/ObeliskOne</code></li>
-            <li><code>curl http://127.0.0.1:5000/archive/ObeliskOne</code></li>
-            <li><code>curl http://127.0.0.1:5000/real/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:80/product/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:80/link/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:80/markup/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:80/archive/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:80/real/ObeliskOne</code></li>
         </ul>
     </div>
     <script>
         // Fetch the list of products and populate the dropdown list
-        fetch('http://127.0.0.1:5000/products')
+        fetch('http://127.0.0.1:80/products')
             .then(response => response.json())
             .then(products => {
                 const productNameSelect = document.getElementById('productName');
