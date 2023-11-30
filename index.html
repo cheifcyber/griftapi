@@ -56,7 +56,7 @@
     <script>
         document.getElementById('apiCall').addEventListener('change', function() {
             var productNameSelect = document.getElementById('productName');
-            if (this.value === '/location') {
+            if (this.value === '/location/') {
                 productNameSelect.disabled = true;
                 productNameSelect.selectedIndex = -1;
             } else {
