@@ -1,1 +1,1 @@
-docker build -t griftapi . && docker run -p 80:5000 griftapi
+docker build -t griftapi . && docker run -p 5000:5000 griftapi
