@@ -69,7 +69,7 @@
             var apiCall = document.getElementById('apiCall').value;
             var productName = document.getElementById('productName').value;
             var url = 'https://grift.vuln.dad' + apiCall;
-            if (apiCall !== '/location/') {
+            if (apiCall !== '/location') {
                 url += productName;
             }
             fetch(url)
