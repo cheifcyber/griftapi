@@ -6,6 +6,10 @@ import os
 app = Flask(__name__, static_folder=os.path.abspath('.'))
 CORS(app, resources={r"/*": {"origins": "*"}})
 
+app.config.update(dict(
+  PREFERRED_URL_SCHEME = 'https'
+))
+
 # Load the CSV data into a pandas DataFrame
 df = pd.read_csv('larkin.csv')
 
