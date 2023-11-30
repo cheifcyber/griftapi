@@ -36,10 +36,6 @@ The Larkin API provides the following endpoints:
 
 Replace `<name>` with the name of the product you want to query.
 
-## Testing
-
-A bash script is provided for testing the API. The script reads the `LarkinProduct` column from the `larkin.csv` file and makes a curl request to each API endpoint for each product. To run the script, use the command `./test.sh`.
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request.
