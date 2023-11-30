@@ -36,6 +36,7 @@
             <li><code>curl https://grift.vuln.dad/real/ObeliskOne</code></li>
             <li><code>curl https://grift.vuln.dad/larp_price/ObeliskOne</code></li>
             <li><code>curl https://grift.vuln.dad/price/ObeliskOne</code></li>
+            <li><code>curl https://grift.vuln.dad/location</code></li>
         </ul>
     </div>
     <script>
@@ -54,10 +55,12 @@
     </script>
     <script>
         document.getElementById('apiCall').addEventListener('change', function() {
+            var productNameSelect = document.getElementById('productName');
             if (this.value === '/location/') {
-                document.getElementById('productName').disabled = true;
+                productNameSelect.disabled = true;
+                productNameSelect.selectedIndex = -1;
             } else {
-                document.getElementById('productName').disabled = false;
+                productNameSelect.disabled = false;
             }
         });
     </script>
@@ -65,7 +68,11 @@
         function sendRequest() {
             var apiCall = document.getElementById('apiCall').value;
             var productName = document.getElementById('productName').value;
-            fetch('https://grift.vuln.dad' + apiCall + productName)
+            var url = 'https://grift.vuln.dad' + apiCall;
+            if (apiCall !== '/location/') {
+                url += productName;
+            }
+            fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('response').textContent = JSON.stringify(data, null, 2);
