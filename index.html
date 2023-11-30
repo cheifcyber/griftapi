@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GriftAPI</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src="/script.js"></script>
+</head>
+<body>
+    <div class="api-test">
+        <h2>Test the API</h2>
+        <select id="apiCall">
+            <option value="/product/">Product</option>
+            <option value="/link/">Link</option>
+            <option value="/markup/">Markup</option>
+            <option value="/archive/">Archive</option>
+            <option value="/real/">Real</option>
+        </select>
+        <select id="productName">
+            <!-- Product options will be populated here -->
+        </select>
+        <button onclick="sendRequest()">Send Request</button>
+        <div id="response"></div>
+    </div>
+    <div class="center">
+        <a href="/docs.html">API Documentation</a>&nbsp;-&nbsp;<a href="https://github.com/cheifcyber/griftapi.git">GitHub</a>
+    </div>
+    <div class="curl-examples">
+        <h2>cURL Examples</h2>
+        <ul>
+            <li><code>curl http://127.0.0.1:5000/product/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:5000/link/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:5000/markup/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:5000/archive/ObeliskOne</code></li>
+            <li><code>curl http://127.0.0.1:5000/real/ObeliskOne</code></li>
+        </ul>
+    </div>
+    <script>
+        // Fetch the list of products and populate the dropdown list
+        fetch('http://127.0.0.1:5000/products')
+            .then(response => response.json())
+            .then(products => {
+                const productNameSelect = document.getElementById('productName');
+                products.forEach(product => {
+                    const option = document.createElement('option');
+                    option.value = product;
+                    option.text = product;
+                    productNameSelect.add(option);
+                });
+            });
+    </script>
+</body>
+</html>

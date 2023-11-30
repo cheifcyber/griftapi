@@ -1,10 +1,25 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
+from flask_cors import CORS
 import pandas as pd
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=os.path.abspath('.'))
+CORS(app, origins=["http://127.0.0.1:8000"])
 
 # Load the CSV data into a pandas DataFrame
 df = pd.read_csv('larkin.csv')
+
+@app.route('/<path:path>')
+def send_file(path):
+    return send_from_directory('.', path)
+
+@app.route('/products', methods=['GET'])
+def get_products():
+    try:
+        products = df['LarkinProduct'].unique().tolist()
+        return jsonify(products)
+    except Exception as e:
+        return str(e)
 
 @app.route('/product/<name>', methods=['GET'])
 def get_product(name):
@@ -44,11 +59,12 @@ def get_markup(name):
         larkin_price = float(product['LarkinPrice'].iloc[0].replace('$', '').replace(',', ''))
         real_price = product['RealPrice'].iloc[0]
         if "_&_Free" in real_price:
-            real_price = 0.0
+            real_price = real_price.split('_&_Free')[0].replace('$', '')
+            real_price = float(real_price) if real_price else 0.0
         else:
             real_price = float(real_price.replace('$', '').replace(',', ''))
         markup = larkin_price - real_price
-        percent_markup = (markup / larkin_price) * 100 if larkin_price != 0 else 0
+        percent_markup = (markup / real_price) * 100 if real_price != 0 else 0
         # Check if "Not_sold" is in the comment
         if "Not_sold" in str(product['Comments'].iloc[0]):
             return jsonify({'markup': f'${markup:.2f}', 'percent_markup': f'{percent_markup:.2f}%', 'RealPrice': product['RealPrice'].iloc[0], 'LarkinPrice': product['LarkinPrice'].iloc[0], 'comment': product['Comments'].iloc[0]}), 200

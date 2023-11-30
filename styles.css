@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+header {
+    padding: 20px;
+    background-color: #1f1f1f;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.endpoint {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+}
+
+footer {
+    padding: 20px;
+    background-color: #1f1f1f;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.center a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.curl-examples {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.curl-examples ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.curl-examples li {
+    margin-bottom: 10px;
+}
+
+.api-test {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+}
+
+.api-test h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.api-test select, .api-test input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.api-test button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.api-test button:hover {
+    background-color: #0056b3;
+}
+
+#response {
+    margin-top: 20px;
+    color: #fff;
+}

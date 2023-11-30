@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GriftAPI Documentation</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>GriftAPI Documentation</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Endpoints</h2>
+            <div class="endpoint">
+                <h3>GET /product/{name}</h3>
+                <p>Returns the real product name, real price, and real links for a given Larkin product. If the comment for the product contains "Not_sold", the comment will also be returned.</p>
+            </div>
+            <div class="endpoint">
+                <h3>GET /link/{name}</h3>
+                <p>Returns the real links for a given Larkin product. If the comment for the product contains "Not_sold", the comment will also be returned.</p>
+            </div>
+            <div class="endpoint">
+                <h3>GET /markup/{name}</h3>
+                <p>Returns the markup and percent markup for a given Larkin product. If the comment for the product contains "Not_sold", the comment will also be returned.</p>
+            </div>
+            <div class="endpoint">
+                <h3>GET /archive/{name}</h3>
+                <p>Returns the archive link for a given Larkin product. If the comment for the product contains "Not_sold", the comment will also be returned.</p>
+            </div>
+            <div class="endpoint">
+                <h3>GET /real/{name}</h3>
+                <p>Returns the real product name for a given Larkin product. If the comment for the product contains "Not_sold", the comment will also be returned.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 GriftAPI. All rights reserved.</p>
+    </footer>
+</body>
+</html>
