@@ -15,12 +15,9 @@ GriftAPI is a Flask application that provides an API for accessing product data.
 To start the Docker container, run the following command:
 
 
-`docker run -p 5000:5000 -d griftapi`
+`chmod +x start.sh && ./start.sh`
 
-
-This command maps port 5000 of the host to port 5000 of the container and runs the container in detached mode.
-
-Visit `https://grift.vuln.dad` in your web browser to access the application.
+Visit `https://grift.vuln.dad` in your web browser to access the application. Or query the api with the curl commands below
 
 ## API Endpoints
 
