@@ -1,7 +1,6 @@
 # GriftAPI
 
-GriftAPI is a Flask application that provides an API for accessing product data.
-
+GriftAPI is a Flask application that provides an API for accessing data on who Larpin Larkin is stealing his products from
 ## Features
 
 - Product API: Get detailed information about a product.
