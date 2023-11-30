@@ -124,7 +124,7 @@ def get_real_price(name):
     else:
         return jsonify({'RealPrice': product['RealPrice'].iloc[0]}), 200
 
-@app.route('/location', methods=['GET'])
+@app.route('/location/', methods=['GET'])
 def get_location():
     return jsonify({'city': 'Canggu', 'state': 'Bali', 'country': 'Indonesia'}), 200
 
