@@ -1,6 +1,10 @@
-# GriftAPI
+# RIP killabit
 
-GriftAPI is a Flask application that provides an API for accessing data on who Larpin Larkin is stealing his products from
+I made this api as part of an internet beef with Bryan Larkin, I have many close friends that know him and he died yesterday January 5th 2024. Im leaving this up for posterity but remember him with respect
+
+# In memoriam Bryan Larkin
+
+
 ## Features
 
 - Product API: Get detailed information about a product.
